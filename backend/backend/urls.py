@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from api import views as api_views
+ 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,5 +25,6 @@ urlpatterns = [
     path('api/articles/', api_views.ArticleListCreateView.as_view(), name='article-list-create'),
     path('api/articles/<int:pk>/', api_views.ArticleRetrieveUpdateDestroyView.as_view(), name='article-detail'),
     path('api/register/', api_views.register_user, name="register"),
-    path("api/ping", api_views.ping, name="ping")
+    path("api/ping", api_views.ping, name="ping"),
+    path("api/connexion/", api_views.connexion, name="connexion")
 ]
